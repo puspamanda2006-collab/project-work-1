@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aramya Fashion</title>
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fffaf7;
+            color: #333;
+        }
+
+
+        /* =========================
+           TOP OFFER BAR
+        ========================== */
+
+        .top-bar {
+            background-color: #7a3e45;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            background: white;
+            padding: 18px 6%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #7a3e45;
+            letter-spacing: 3px;
+        }
+
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+
+        nav a:hover {
+            color: #7a3e45;
+        }
+
+
+        .header-icons {
+            display: flex;
+            gap: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HERO SECTION
+        ========================== */
+
+        .hero {
+
+            height: 550px;
+
+            background:
+            linear-gradient(
+                rgba(0,0,0,0.35),
+                rgba(0,0,0,0.35)
+            ),
+            url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+        }
+
+
+        .hero-content h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+
+        .hero button {
+
+            padding: 14px 35px;
+
+            border: none;
+
+            background-color: #7a3e45;
+
+            color: white;
+
+            font-size: 17px;
+
+            cursor: pointer;
+
+            border-radius: 5px;
+        }
+
+
+        .hero button:hover {
+            background-color: #57282e;
+        }
+
+
+        /* =========================
+           FEATURES
+        ========================== */
+
+        .features {
+
+            display: grid;
+
+            grid-template-columns:
+            repeat(3, 1fr);
+
+            gap: 20px;
+
+            padding: 50px 10%;
+        }
+
+
+        .feature {
+
+            background: white;
+
+            padding: 30px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            box-shadow:
+            0 3px 12px rgba(0,0,0,0.1);
+        }
+
+
+        .feature h3 {
+
+            color: #7a3e45;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           SECTION TITLE
+        ========================== */
+
+        .section-title {
+
+            text-align: center;
+
+            font-size: 35px;
+
+            color: #7a3e45;
+
+            margin:
+            30px 0 40px;
+        }
+
+
+        /* =========================
+           CATEGORIES
+        ========================== */
+
+        .categories {
+
+            display: grid;
+
+            grid-template-columns:
+            repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 25px;
+
+            padding:
+            0 8% 70px;
+        }
+
+
+        .category {
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+        }
+
+
+        .category img {
+
+            width: 100%;
+
+            height: 300px;
+
+            object-fit: cover;
+
+            transition: 0.4s;
+        }
+
+
+        .category:hover img {
+
+            transform:
+            scale(1.1);
+        }
+
+
+        .category h3 {
+
+            position: absolute;
+
+            bottom: 15px;
+
+            left: 15px;
+
+            background: white;
+
+            padding: 10px 20px;
+
+            border-radius: 5px;
+
+            color: #7a3e45;
+        }
+
+
+        /* =========================
+           PRODUCTS
+        ========================== */
+
+        .products {
+
+            display: grid;
+
+            grid-template-columns:
+            repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 25px;
+
+            padding:
+            0 8% 70px;
+        }
+
+
+        .product-card {
+
+            background: white;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            box-shadow:
+            0 4px 15px rgba(0,0,0,0.1);
+
+            transition: 0.3s;
+        }
+
+
+        .product-card:hover {
+
+            transform:
+            translateY(-8px);
+        }
+
+
+        .product-card img {
+
+            width: 100%;
+
+            height: 320px;
+
+            object-fit: cover;
+        }
+
+
+        .product-info {
+
+            padding: 18px;
+        }
+
+
+        .product-info h3 {
+
+            margin-bottom: 10px;
+        }
+
+
+        .price {
+
+            color: #7a3e45;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+
+        .product-info button {
+
+            width: 100%;
+
+            padding: 12px;
+
+            background: #7a3e45;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            font-size: 16px;
+        }
+
+
+        .product-info button:hover {
+
+            background:
+            #57282e;
+        }
+
+
+        /* =========================
+           CART
+        ========================== */
+
+        .cart-section {
+
+            background:
+            #f4e6e3;
+
+            padding: 50px 8%;
+
+            display: none;
+        }
+
+
+        .cart-item {
+
+            background: white;
+
+            padding: 15px;
+
+            margin: 10px 0;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            border-radius: 8px;
+        }
+
+
+        /* =========================
+           LOGIN
+        ========================== */
+
+        .login-section {
+
+            background:
+            #f4e6e3;
+
+            padding: 70px 20px;
+
+            display: flex;
+
+            justify-content: center;
+        }
+
+
+        .login-box {
+
+            width: 400px;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 10px;
+
+            box-shadow:
+            0 4px 15px rgba(0,0,0,0.1);
+        }
+
+
+        .login-box h2 {
+
+            text-align: center;
+
+            color: #7a3e45;
+
+            margin-bottom: 25px;
+        }
+
+
+        .login-box input {
+
+            width: 100%;
+
+            padding: 13px;
+
+            margin-bottom: 15px;
+
+            border:
+            1px solid #ccc;
+
+            border-radius: 5px;
+        }
+
+
+        .login-box button {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: none;
+
+            background:
+            #7a3e45;
+
+            color: white;
+
+            font-size: 16px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+        }
+
+
+        .login-box button:hover {
+
+            background:
+            #57282e;
+        }
+
+
+        #loginMessage {
+
+            text-align: center;
+
+            margin-top: 15px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+
+            background:
+            #2d1a1d;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 40px 20px;
+        }
+
+
+        footer h2 {
+
+            margin-bottom: 15px;
+
+            letter-spacing: 3px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            header {
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+
+            nav {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 15px;
+            }
+
+
+            .hero {
+
+                height: 450px;
+            }
+
+
+            .hero-content h1 {
+
+                font-size: 38px;
+            }
+
+
+            .features {
+
+                grid-template-columns:
+                1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         TOP BAR
+    ========================== -->
+
+    <div class="top-bar">
+
+        ✨ Free Shipping on Orders Above ₹999 | Cash on Delivery Available
+
+    </div>
+
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+
+            ARAMYA
+
+        </div>
+
+
+        <nav>
+
+            <a href="#home">Home</a>
+
+            <a href="#categories">Categories</a>
+
+            <a href="#products">Shop</a>
+
+            <a href="#login">Login</a>
+
+        </nav>
+
+
+        <div class="header-icons">
+
+            <span>♡</span>
+
+            <span onclick="showCart()" style="cursor:pointer;">
+
+                🛒 <span id="cartCount">0</span>
+
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Elegant Fashion For Every Woman</h1>
+
+            <p>
+
+                Discover Beautiful Ethnic & Modern Styles
+
+            </p>
+
+
+            <button onclick="shopNow()">
+
+                SHOP NOW
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FEATURES
+    ========================== -->
+
+    <section class="features">
+
+        <div class="feature">
+
+            <h3>🌸 Premium Quality</h3>
+
+            <p>
+
+                Comfortable and stylish fabrics for everyday elegance.
+
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <h3>🚚 Fast Delivery</h3>
+
+            <p>
+
+                Quick and secure delivery to your doorstep.
+
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <h3>💖 Latest Fashion</h3>
+
+            <p>
+
+                Discover the latest trends and beautiful collections.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CATEGORIES
+    ========================== -->
+
+    <h2 class="section-title">
+
+        Shop By Category
+
+    </h2>
+
+
+    <section
+    class="categories"
+    id="categories">
+
+
+        <div class="category">
+
+            <img
+            src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=600&q=80">
+
+            <h3>Kurtas</h3>
+
+        </div>
+
+
+
+        <div class="category">
+
+            <img
+            src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=600&q=80">
+
+            <h3>Kurta Sets</h3>
+
+        </div>
+
+
+
+        <div class="category">
+
+            <img
+            src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=600&q=80">
+
+            <h3>Dresses</h3>
+
+        </div>
+
+
+
+        <div class="category">
+
+            <img
+            src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=600&q=80">
+
+            <h3>Co-ord Sets</h3>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         PRODUCTS
+    ========================== -->
+
+    <h2 class="section-title">
+
+        Trending Products
+
+    </h2>
+
+
+    <section
+    class="products"
+    id="products">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product-card">
+
+            <img
+            src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=600&q=80">
+
+
+            <div class="product-info">
+
+                <h3>
+
+                    Elegant Cotton Kurta
+
+                </h3>
+
+
+                <div class="price">
+
+                    ₹999
+
+                </div>
+
+
+                <button
+                onclick="addToCart('Elegant Cotton Kurta',999)">
+
+                    Add To Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product-card">
+
+            <img
+            src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=600&q=80">
+
+
+            <div class="product-info">
+
+                <h3>
+
+                    Floral Kurta Set
+
+                </h3>
+
+
+                <div class="price">
+
+                    ₹1499
+
+                </div>
+
+
+                <button
+                onclick="addToCart('Floral Kurta Set',1499)">
+
+                    Add To Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <img
+            src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=600&q=80">
+
+
+            <div class="product-info">
+
+                <h3>
+
+                    Classic Ethnic Dress
+
+                </h3>
+
+
+                <div class="price">
+
+                    ₹1299
+
+                </div>
+
+
+                <button
+                onclick="addToCart('Classic Ethnic Dress',1299)">
+
+                    Add To Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product-card">
+
+            <img
+            src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=600&q=80">
+
+
+            <div class="product-info">
+
+                <h3>
+
+                    Stylish Co-ord Set
+
+                </h3>
+
+
+                <div class="price">
+
+                    ₹1699
+
+                </div>
+
+
+                <button
+                onclick="addToCart('Stylish Co-ord Set',1699)">
+
+                    Add To Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         CART SECTION
+    ========================== -->
+
+    <section
+    class="cart-section"
+    id="cart">
+
+
+        <h2 class="section-title">
+
+            Your Shopping Cart
+
+        </h2>
+
+
+        <div id="cartItems">
+
+        </div>
+
+
+        <h3
+        id="totalPrice"
+        style="text-align:center;">
+
+            Total: ₹0
+
+        </h3>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         LOGIN SECTION
+    ========================== -->
+
+    <section
+    class="login-section"
+    id="login">
+
+
+        <div class="login-box">
+
+
+            <h2>
+
+                Login
+
+            </h2>
+
+
+            <input
+            type="email"
+            id="email"
+            placeholder="Enter your Email"
+            required>
+
+
+            <input
+            type="password"
+            id="password"
+            placeholder="Enter your Password"
+            required>
+
+
+            <button
+            onclick="loginUser()">
+
+                Login
+
+            </button>
+
+
+            <p id="loginMessage">
+
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+
+        <h2>
+
+            ARAMYA
+
+        </h2>
+
+
+        <p>
+
+            Elegant Fashion | Comfortable Style | Premium Quality
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            © 2026 Aramya Fashion. All Rights Reserved.
+
+        </p>
+
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+
+        /* =========================
+           CART DATA
+        ========================== */
+
+        let cart = [];
+
+
+
+        /* =========================
+           ADD TO CART
+        ========================== */
+
+        function addToCart(name, price) {
+
+            cart.push({
+
+                name: name,
+
+                price: price
+
+            });
+
+
+            document.getElementById("cartCount").innerText =
+            cart.length;
+
+
+            alert(name + " added to cart!");
+
+        }
+
+
+
+        /* =========================
+           SHOW CART
+        ========================== */
+
+        function showCart() {
+
+
+            let cartSection =
+
+            document.getElementById("cart");
+
+
+            cartSection.style.display =
+            "block";
+
+
+            let cartItems =
+
+            document.getElementById("cartItems");
+
+
+            cartItems.innerHTML =
+            "";
+
+
+            let total = 0;
+
+
+
+            cart.forEach(function(item) {
+
+
+                total += item.price;
+
+
+                cartItems.innerHTML +=
+
+                `
+
+                <div class="cart-item">
+
+                    <span>
+
+                        ${item.name}
+
+                    </span>
+
+
+                    <span>
+
+                        ₹${item.price}
+
+                    </span>
+
+                </div>
+
+                `;
+
+            });
+
+
+
+            document.getElementById(
+                "totalPrice"
+            ).innerText =
+
+            "Total: ₹" + total;
+
+
+
+            cartSection.scrollIntoView({
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+
+
+        /* =========================
+           SHOP NOW
+        ========================== */
+
+        function shopNow() {
+
+
+            document.getElementById(
+                "products"
+            ).scrollIntoView({
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+
+
+        /* =========================
+           LOGIN FUNCTION
+        ========================== */
+
+        function loginUser() {
+
+
+            let email =
+
+            document.getElementById(
+                "email"
+            ).value;
+
+
+
+            let password =
+
+            document.getElementById(
+                "password"
+            ).value;
+
+
+
+            let message =
+
+            document.getElementById(
+                "loginMessage"
+            );
+
+
+
+            /* DEMO LOGIN */
+
+            if(
+
+                email ===
+                "user@gmail.com"
+
+                &&
+
+                password ===
+                "123456"
+
+            ) {
+
+
+                message.innerText =
+
+                "Login Successful!";
+
+
+                message.style.color =
+
+                "green";
+
+            }
+
+
+            else {
+
+
+                message.innerText =
+
+                "Incorrect Email or Password";
+
+
+                message.style.color =
+
+                "red";
+
+            }
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
